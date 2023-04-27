@@ -1,0 +1,25 @@
+from django import forms
+from .models import District, Branch
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form method="post" action="add">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name"><br>
+    <input type="date" name="date_of_birth" placeholder="Date Of Birth"><br>
+    <input type="number" name="age" placeholder="Age"><br>
+    <input type="radio" name="gender" placeholder="Gender">Male<input type="radio" name="gender" placeholder="Gender">Female<br>
+    <input type="number" name="phone_number" placeholder="Phone Number"><br>
+    <input type="email" name="email" placeholder="Email ID"><br>
+    <input type="text" name="address" placeholder="Address"><br>
+    <input type=""
+    <input type="checkbox">Debit card<input type="checkbox">Credit Card<input type="checkbox">Cheque Book<br>
+    <input type="submit" >
+    <a class="btn btn-secondary" href='logout'>Logout</a>
+</form>
+</body>
+</html>

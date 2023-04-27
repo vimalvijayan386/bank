@@ -1,0 +1,26 @@
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button><br>
+    <div>
+    <a class="btn btn-secondary" href='logout'>Logout</a>
+      </div>
+  </form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function load_branches() {
+      var district_id = $('#id_district').val();
+      $.ajax({
+        url: 'ajax/load-branches',
+        data: {
+          'district': district_id
+        },
+        success: function (data) {
+          $('#id_branch').html(data);
+        }
+      });
+    }
+  </script>
+{% endblock %}
